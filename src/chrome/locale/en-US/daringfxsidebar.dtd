@@ -1,0 +1,13 @@
+<!ENTITY daringFxSidebar.window.title "Search KBBI Daring">
+<!ENTITY daringFxSidebar.button.search "Search">
+<!ENTITY daringFxSidebar.button.search.accessKey "S">
+<!ENTITY daringFxSidebar.menu.option "Option">
+<!ENTITY daringFxSidebar.menu.option.accessKey "O">
+<!ENTITY daringFxSidebar.popup.equal "Equal">
+<!ENTITY daringFxSidebar.popup.equal.accessKey "E">
+<!ENTITY daringFxSidebar.popup.start "Start with">
+<!ENTITY daringFxSidebar.popup.start.accessKey "S">
+<!ENTITY daringFxSidebar.popup.contain "Contain">
+<!ENTITY daringFxSidebar.popup.contain.accessKey "C">
+<!ENTITY openDaringFxSidebar.commandkey "O">
+<!ENTITY openDaringFxSidebar.modifierskey "shift accel">

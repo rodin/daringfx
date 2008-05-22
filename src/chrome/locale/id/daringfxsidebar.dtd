@@ -1,0 +1,13 @@
+<!ENTITY daringFxSidebar.window.title "Pencarian KBBI Daring">
+<!ENTITY daringFxSidebar.button.search "Cari">
+<!ENTITY daringFxSidebar.button.search.accessKey "C">
+<!ENTITY daringFxSidebar.menu.option "Pilihan">
+<!ENTITY daringFxSidebar.menu.option.accessKey "P">
+<!ENTITY daringFxSidebar.popup.equal "Sama dengan">
+<!ENTITY daringFxSidebar.popup.equal.accessKey "S">
+<!ENTITY daringFxSidebar.popup.start "Dimulai">
+<!ENTITY daringFxSidebar.popup.start.accessKey "D">
+<!ENTITY daringFxSidebar.popup.contain "Mengandung">
+<!ENTITY daringFxSidebar.popup.contain.accessKey "M">
+<!ENTITY openDaringFxSidebar.commandkey "O">
+<!ENTITY openDaringFxSidebar.modifierskey "shift accel">
