@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE page SYSTEM "chrome://daringfx/locale/daringfxsidebar.dtd">
+<page id="daringFxSidebar" 
+		title="&daringFxSidebar.window.title;"
+    	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		orient="vertical"
+		onload="DaringFx.init();">
+	<script src="chrome://daringfx/content/DaringFx.js"/>
+  	<script src="chrome://daringfx/content/htmlparser.js"/>
+  	<popupset>
+    	<menupopup id="option-menu">
+      		<menuitem label="&daringFxSidebar.popup.equal;"/>
+      		<menuitem label="&daringFxSidebar.popup.start;"/>
+      		<menuitem label="&daringFxSidebar.popup.contain;"/>
+    	</menupopup>
+  	</popupset>
+  	<stringbundleset id="string-bundle">
+    	<stringbundle id="strings" 
+				src="chrome://daringfx/locale/strings.properties"/>
+  	</stringbundleset>
+  	<vbox flex="1">
+    	<hbox>
+      		<textbox id="search-box" 
+					flex="1" 
+					type="timed" 
+					timeout="1000" 
+					autocompletesearch="form-history" 
+					accesskey="&daringFxSidebar.button.search.accessKey;" 
+					oncommand="DaringFx.search(this.value,document.getElementById('option-button').getAttribute('selectedtype'), '', '', 0, 0, '');"/>
+      		<button id="option-button" 
+					style="min-width:0px !important;" 
+					type="menu" 
+					label="&daringFxSidebar.menu.option;" 
+					accesskey="&daringFxSidebar.menu.option.accessKey;" 
+					selectedtype="1" 
+					persist="selectedtype">
+        		<menupopup>
+          			<menuitem id="equal" 
+							label="&daringFxSidebar.popup.equal;" 
+							type="radio" 
+							accesskey="&daringFxSidebar.popup.equal.accessKey;" 
+							oncommand="this.parentNode.parentNode.setAttribute('selectedtype', DaringFx.ARG_OPKODE_EQ);DaringFx.resetSearch();"/>
+          			<menuitem id="startwith" 
+							label="&daringFxSidebar.popup.start;" 
+							type="radio" 
+							accesskey="&daringFxSidebar.popup.start.accessKey;" 
+							oncommand="this.parentNode.parentNode.setAttribute('selectedtype', DaringFx.ARG_OPKODE_START);DaringFx.resetSearch();"/>
+          			<menuitem id="contain" 
+							label="&daringFxSidebar.popup.contain;" 
+							type="radio" 
+							accesskey="&daringFxSidebar.popup.contain.accessKey;" 
+							oncommand="this.parentNode.parentNode.setAttribute('selectedtype', DaringFx.ARG_OPKODE_CONTAIN);DaringFx.resetSearch();"/>
+        		</menupopup>
+      		</button>
+    	</hbox>
+		<hbox id="paging" flex="0"/>
+    	<vbox id="results-link" flex="1"/>
+  	</vbox>
+</page>
+

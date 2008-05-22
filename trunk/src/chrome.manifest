@@ -1,0 +1,5 @@
+content	daringfx	jar:chrome/daringfx.jar!/chrome/content/
+locale	daringfx	en-US	jar:chrome/daringfx.jar!/chrome/locale/en-US/
+locale	daringfx	id	jar:chrome/daringfx.jar!/chrome/locale/id/
+overlay	chrome://browser/content/browser.xul	chrome://daringfx/content/firefoxOverlay.xul
+skin	daringfx	classic/1.0	jar:chrome/daringfx.jar!/chrome/skin/
