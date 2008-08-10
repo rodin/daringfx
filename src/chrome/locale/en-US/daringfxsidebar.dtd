@@ -9,5 +9,5 @@
 <!ENTITY daringFxSidebar.popup.start.accessKey "S">
 <!ENTITY daringFxSidebar.popup.contain "Contain">
 <!ENTITY daringFxSidebar.popup.contain.accessKey "C">
-<!ENTITY openDaringFxSidebar.commandkey "O">
-<!ENTITY openDaringFxSidebar.modifierskey "shift accel">
+<!ENTITY openDaringFxSidebar.commandkey "I">
+<!ENTITY openDaringFxSidebar.modifierskey "accel shift">
