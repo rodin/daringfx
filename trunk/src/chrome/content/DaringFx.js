@@ -18,6 +18,7 @@ DaringFx = {
 		this.prevCount		= DaringFx.ARG_HEAD;
 		this.pageNext		= false;
 		this.pagePrev		= false;
+		this.requestTimer = false;
 
 		document.getElementById('search-box').focus();
   		this.selectedType = document.getElementById("option-button")
@@ -59,6 +60,11 @@ DaringFx = {
 				}
 				this.httpRequest.open(
 						DaringFx.FORM_METHOD, this.BASE_URL, true);
+				//set timeout to handle 
+				this.requestTimer = setTimeout(function() {
+            DaringFx.httpRequest.abort();
+            DaringFx.createActivityLabel(this.strings.getString('ServerTimeOut'));
+        }, DaringFx.TIMEOUT);
 				this.httpRequest.setRequestHeader("Pragma", "no-cache");
 				this.httpRequest.setRequestHeader("Content-type", 
 					"application/x-www-form-urlencoded");
@@ -73,7 +79,8 @@ DaringFx = {
 	//when search are ready
 	searchReady: function(firstword, type) {
 	   	if (this.httpRequest.readyState == 4) {
-			if(this.httpRequest.status == 200) {
+	   	clearTimeout(this.requestTimer);
+			if (this.httpRequest.status == 200) {
 				var html = this.cleanUpHTML(this.httpRequest.responseText);
 				var doc = this.domParser.parseFromString(html, "text/xml");
 				var labelTextElement = this.resetContents();
@@ -109,12 +116,12 @@ DaringFx = {
 			} else {
 				this.createActivityLabel(
 					this.strings.getFormattedString(
-						'errorLoadingPage_status', [ request.status ]));
+						'errorLoadingPage_status', [ this.httpRequest.status ]));
 			}
 		}
 	},
 	
-	//get paging info
+	//get paging infocreateActivityLabel
 	getPaging: function(elems, selectedType, firstword, fullword) {
 		this.resetPaging();
 		if (elems) {
@@ -288,7 +295,7 @@ DaringFx = {
 
 //base
 DaringFx.BASE_URL       = 'http://pusatbahasa.diknas.go.id/kbbi/index.php';
-
+DaringFx.TIMEOUT        = 9000;
 //forms
 DaringFx.FORM_ID        = 'CARIKATA';
 DaringFx.FORM_NAME      = 'CARIKATA';

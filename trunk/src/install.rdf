@@ -4,14 +4,14 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>daringfx@ewesewes.net</em:id>
     <em:name>KBBI Daring</em:name>
-    <em:version>1.0</em:version>
+    <em:version>1.0.1</em:version>
     <em:creator>Romi Hardiyanto</em:creator>
     <em:description>Pencarian KBBI Daring.</em:description>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
         <em:minVersion>2.0.0.8</em:minVersion>
-        <em:maxVersion>3.0</em:maxVersion>
+        <em:maxVersion>3.0.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
